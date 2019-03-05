@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<title>Goodreads Recommender User Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style19.css') }}">
+<link rel="stylesheet" href="style19.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-1.0.2.min.js"></script>
+<div class="container">
+
+<BODY>
+        <br>
+        <br>
+<H1>WorldPortal Fantasy Book Recommender</H1>
+   <P><img src="{{ url_for('static', filename="books.jpg")}}"></P>
+<H2>User Recommendations for User {{name}}</H2>
+<br>
+
+<h3>Reader Enjoys:</h3>
+
+<div style="width: 50%">
+        {{ javascript | safe }}
+        {{ div | safe }}
+</div>
+
+<h3>Books Read:</h3>
+<div class="books-read-table">
+    <table class="table table-sm">
+    <table>{{table}}</table>
+</div>
+
+<h3>Recommendations Based on Similar Users:</h3>
+<div class="books-rec-table"></div>
+    <table class="table table-sm"></table>
+    <table>{{table2}}                
+    </table>       
+</div>
+{% if topic_form %}
+<form name="topic_form" id='topic_form' action="" method="post" onsubmit="" value='submit1'>
+    {% for i in boxes %}
+        <input type="radio" name="themes" value="{{i}}"></input>
+        <label for="id_{{i}}">{{i}}</label>        
+    {% endfor %}
+    <input type="submit" value="Refresh my list">
+</form>
+{% endif %}
+
+
+<h3>Recommendations Based on Content:</h3>
+{% if content_form %}
+      <form role="form" method='POST' id='content_form' action='' value='submit'>
+
+        <div class="form-title">
+          <input type="text" name="title" class="form-control" id="title" placeholder="Enter title..." style="max-width: 1000px;" autofocus required>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+
+      </form>
+{% endif %}
+<p>Title: {{title}}</p>
+<ul>
+    {% for r in results %}
+        <li>{{r}} </li>
+    {% endfor %}         
+</ul>
+    
+      <br>
+      {% for error in errors %}
+        <h4>{{ error }}</h4>
+      {% endfor %}
+    </div>
+
+
+</BODY>
+
+</html>

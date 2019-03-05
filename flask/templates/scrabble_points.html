@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <title>Scrabble Page!</title>
+</head>
+
+<body>
+    <p>        
+    Input your letters to see how much your hand is worth!        
+    </p>
+  
+    <form action= "/hand/{{letter_input}}">
+    
+        <input type="text" name="{{ letter_input }}" value="">
+        <input type="submit" value="Submit" method="get">
+               
+      </form>
+    
+      <p>        
+        Points: {{points}}       
+      </p>
+</body>
+
+</html>
