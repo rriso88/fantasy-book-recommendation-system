@@ -10,4 +10,6 @@ I employed the Suprise library in Python to estimate user ratings. In the test s
 
 Finally, I designed an interactive Flask app wherein a user can enter their ID and receive book recommendations tailored to their own likes and dislikes.
 
-Future work includes acquiring additional user ratings to improve the performance of the collaborative-based filtering model, employing a more sophisticated algorithm and additional NLP for content-based recommendations, and posting an improved Flask app to Heroku for data visualization and real-time recommendations.
+Future work includes acquiring additional user ratings to improve the performance of the collaborative-based filtering model, employing a more sophisticated algorithm and additional NLP for content-based recommendations.
+
+Checkout my updated Flask app on Heroku and get real-time recommendations! https://fantasy-book-app.herokuapp.com
